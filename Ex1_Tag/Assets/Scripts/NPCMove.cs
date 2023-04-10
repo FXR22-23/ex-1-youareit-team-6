@@ -56,8 +56,6 @@ public class NPCMove : MonoBehaviour
         
         if (direction.magnitude >= distance)
         {
-            // Vector3 pushVector = direction.normalized * speed;
-            // transform.Translate(pushVector, Space.World);
             GetComponent<NavMeshAgent>().SetDestination(goal.position);
         }
         else // caught the player
@@ -82,8 +80,6 @@ public class NPCMove : MonoBehaviour
         realGoal = new Vector3(goal.position.x, 
             transform.position.y, goal.position.z);
         direction = transform.position - realGoal;
-        // Vector3 pushVector = direction.normalized * speed;
-        // transform.Translate(pushVector, Space.World);
 
         GetComponent<NavMeshAgent>().SetDestination(runawayDestination.position);
         

@@ -9,7 +9,7 @@ using UnityEngine.AI;
 public class NPCMove : MonoBehaviour
 {
     public Transform goal;
-    private float speed = 0.005f;
+    private float speed = 0.003f;
     private float rotationSpeed = 0.03f;
     private float distance = 0.5f;
     private bool stayIdle = true;
@@ -31,7 +31,7 @@ public class NPCMove : MonoBehaviour
         if (!GetComponent<Animator>().GetBool("Is Walking") && !GetComponent<Animator>().GetBool("Is Running"))
         {
             GetComponent<Animator>().SetBool("Is Walking", true);
-            speed = 0.005f;
+            speed = 0.003f;
             Invoke("StartRunning", 2);
         }
 
@@ -106,7 +106,7 @@ public class NPCMove : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("Is Running", true);
         GetComponent<Animator>().SetBool("Is Walking", false);
-        speed = 0.01f;
+        speed = 0.006f;
     }
 
     void CanBeCaught()
